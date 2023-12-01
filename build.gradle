@@ -20,7 +20,7 @@ apply plugin : 'io.spring.dependency-management' //스프링 부트의 의존성
 
 group 'org.jojoldu.book'
 version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
+
 
 //repositories는 각종 의존성(라이브러리)들을 어떤 원격 저장소에서 받을지 정함
 //기본적으로 mavenCentral을 많이 사용하지만 최근에는 라이브러리 업로드 난이도 때문에 jcenter도 많이 사용
@@ -37,7 +37,6 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
-
 /* Default build.gradle
 
 plugins {
