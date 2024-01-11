@@ -6,6 +6,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +64,8 @@ public class HelloControllerTest {
 		.andExpect(jsonPath("$.name", is(name)))
 		.andExpect(jsonPath("$.amount", is(amount)));
 		
-		
+		Map<String,Object> map = new LinkedHashMap<String,Object>();
+		map.put("key","d");
 		
 	}
 	
