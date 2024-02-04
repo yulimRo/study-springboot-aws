@@ -1,5 +1,9 @@
 package com.example.springboot.web;
 
+import java.util.concurrent.TimeUnit;
+
+import org.springframework.http.CacheControl;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,8 +15,9 @@ import com.example.springboot.web.dto.HelloResponseDto;
 public class HelloController {
 	
 	@GetMapping("/hello")
-	public String hello() {
-		return "hello";
+	public ResponseEntity hello() {
+		return ResponseEntity.ok().cacheControl(CacheControl.maxAge(20, TimeUnit.SECONDS))
+		        .body("hello");
 	}
 	
 	/*
